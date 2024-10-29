@@ -46,7 +46,7 @@ fn main() {
         term.clear_screen().expect("Не удалось очистить консоль");
 
         // x1, x2 find or empty
-        println!("a: {}, b: {}, c: {}", a, b, c);
+        println!("{}x^2 + {}x + {} = 0", a, b, c);
         if d > 0.0{
             let x1 = ((-b) + d.sqrt()) / (2.0 * a);
             let x2 = ((-b) - d.sqrt()) / (2.0 * a);
