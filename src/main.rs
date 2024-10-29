@@ -15,20 +15,20 @@ fn main() {
 
         term.clear_screen().expect("Не удалось очистить консоль"); // clean console if it use after first usage
 
-        println!("Решить ax^2 + bx + c = 0 уравнение");
+        println!("Решить ax^2 + bx + c = 0 уравнение\n");
 
         // Get a, b, c numbers
-        println!("Введите a (ax^2 + bx + c = 0): ");
+        println!("Введите a:");
         match io::stdin().read_line(&mut a_str) {
             Ok(_) => {}
             Err(e) => println!("Ошибка ввода - {}", e)
         }
-        println!("Введите b (ax^2 + bx + c = 0): ");
+        println!("Введите b:");
         match io::stdin().read_line(&mut b_str) {
             Ok(_) => {}
             Err(e) => println!("Ошибка ввода - {}", e)
         }
-        println!("Введите c (ax^2 + bx + c = 0): ");
+        println!("Введите c:");
         match io::stdin().read_line(&mut c_str) {
             Ok(_) => {}
             Err(e) => println!("Ошибка ввода - {}", e)
@@ -46,16 +46,16 @@ fn main() {
         term.clear_screen().expect("Не удалось очистить консоль");
 
         // x1, x2 find or empty
-        println!("{}x^2 + {}x + {} = 0", a, b, c);
+        println!("Уравнение: {}x^2{}x{} = 0\n", a, b, c);
         if d > 0.0{
             let x1 = ((-b) + d.sqrt()) / (2.0 * a);
             let x2 = ((-b) - d.sqrt()) / (2.0 * a);
-            println!("Решено:\nЕсть 2 корня\nD = {}\nКорень 1 = {}\nКорень 2 = {}\n", d, x1, x2)
+            println!("Решено:\nD = {}x^2{}x{} = 0 = {}\nx1 = {}\nx2 = {}\n\nОтвет: x1 = {}, x2 = {}\n", a,b,c, d, x1, x2, x1, x2)
         } else if d == 0.0{
             let x1 = (-b) / (2.0 * a);
-            println!("Решено:\nЕсть 2 корня\nD = {}\nКорень 1 = {}\n", d, x1)
+            println!("Решено:\nD = {}x^2{}x{} = 0 = {}\nx1 = {}\n\nОтвет: x1 = {}\n",a,b,c, d, x1, x1)
         } else {
-            println!("Решено:\nКорней нет!\nD = {}\n", d)
+            println!("Решено:\nКорней нет!\nD = {}x^2{}x{} = 0 = {}\n\nОтвет: корней нет\n",a,b,c, d)
         }
 
         // continue or quit ?
